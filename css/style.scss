@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, lime, royalblue);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 280px;
+    position: relative;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 4px rgba(#000, 0.15);
+    color: #333;
+    font-size: 2em;
+    cursor: pointer;
+    transition: 1.25s;
+    z-index: 1000;
+}
+
+.menu.active .toggle {
+    transform: rotate(360deg);
+    box-shadow: 0 6px 8px rgba(#000, 0.15), 0 0 0 2px #333, 0 0 0 8px #fff;
+}
+
+.menu li {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    list-style: none;
+    transition: .35s, scale .35s calc(0.05s * var(--i)), width .35s calc(0.05s * var(--i)), height .35s calc(0.05s * var(--i)), background .35s calc(0.05s * var(--i)), border-radius .35s calc(0.05s * var(--i));
+    transform: rotate(calc(360deg/8 * var(--i)));
+    transform-origin: 140px;
+    scale: 0;
+    font-size: 1.75em;
+}
+
+a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--clr);
+    transition: .25s;
+}
+
+.menu.active li {
+    scale: (1);
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.75em;
+    color: var(--clr);
+}
+
+.menu.active li:hover a {
+    font-size: 1.5em;
+}
+
+.menu.active li:hover {
+    box-shadow: 0 0 0 2px var(--clr), 0 0 0 6px #fff;
+}
+
+.ri-twitter-fill {
+    transform: rotate(-90deg);
+}
+
+.ri-pinterest-fill {
+    transform: rotate(90deg);
+}
+
+.ri-whatsapp-fill {
+    transform: rotate(-45deg);
+}
+
+.ri-youtube-fill {
+    transform: rotate(45deg);
+}
+
+.ri-instagram-line {
+    transform: rotate(45deg);
+}
+
+.ri-dribbble-fill {
+    transform: rotate(45deg);
+}
+
+.ri-linkedin-box-fill {
+    transform: rotate(180deg);
+}
